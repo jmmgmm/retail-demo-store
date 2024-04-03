@@ -217,7 +217,7 @@ Resources:
   Loadbalancer:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/services/service/loadbalancer.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/services/service/loadbalancer.yaml
       Parameters:
         ServiceName: !Ref ServiceName
         Subnets: !Ref Subnets
@@ -227,7 +227,7 @@ Resources:
   Pipeline:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/services/service/pipeline.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/services/service/pipeline.yaml
       Parameters:
         ClusterName: !Ref ClusterName
         ServiceName: !Ref ServiceName
@@ -263,7 +263,7 @@ Resources:
   Service:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/services/service/service.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/services/service/service.yaml
       Parameters:
         ServiceName: !Ref ServiceName
         ClusterName: !Ref ClusterName

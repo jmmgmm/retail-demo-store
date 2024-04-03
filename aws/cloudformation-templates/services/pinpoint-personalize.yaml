@@ -104,7 +104,7 @@ Resources:
       Runtime: python3.12
       Code:
         S3Bucket: !Ref ResourceBucket
-        S3Key: !Sub '${ResourceBucketRelativePath}aws-lambda/pinpoint-recommender.zip'
+        S3Key: !Sub '/${ResourceBucketRelativePath}aws-lambda/pinpoint-recommender.zip'
       FunctionName: RetailDemoStorePinpointRecommender  # Function name used in notebook to lookup ARN
       VpcConfig:
         SecurityGroupIds:
@@ -123,7 +123,7 @@ Resources:
       Runtime: python3.12
       Code:
         S3Bucket: !Ref ResourceBucket
-        S3Key: !Sub '${ResourceBucketRelativePath}aws-lambda/pinpoint-offers-recommender.zip'
+        S3Key: !Sub '/${ResourceBucketRelativePath}aws-lambda/pinpoint-offers-recommender.zip'
       FunctionName: RetailDemoStorePinpointOffersRecommender  # Function name used in notebook to lookup ARN
       VpcConfig:
         SecurityGroupIds:
@@ -154,7 +154,7 @@ Resources:
         - Arn
       Code:
         S3Bucket: !Ref ResourceBucket
-        S3Key: !Sub '${ResourceBucketRelativePath}aws-lambda/pinpoint-sms-alerts.zip'
+        S3Key: !Sub '/${ResourceBucketRelativePath}aws-lambda/pinpoint-sms-alerts.zip'
       Runtime: python3.12
       Timeout: 900
       FunctionName: RetailDemoStorePinpointSMSAlerts

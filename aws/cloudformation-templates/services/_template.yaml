@@ -149,7 +149,7 @@ Resources:
   ProductsService:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
       Parameters:
         ServiceName: products
         ServicePath: src/products
@@ -185,7 +185,7 @@ Resources:
   UsersService:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
       Parameters:
         ServiceName: users
         ServicePath: src/users
@@ -218,7 +218,7 @@ Resources:
   CartsService:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
       Parameters:
         ServiceName: carts
         ServicePath: src/carts
@@ -253,7 +253,7 @@ Resources:
   OrdersService:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
       Parameters:
         ServiceName: orders
         ServicePath: src/orders
@@ -286,7 +286,7 @@ Resources:
   SearchService:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
       Parameters:
         ServiceName: search
         ServicePath: src/search
@@ -319,7 +319,7 @@ Resources:
   LocationService:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
       Parameters:
         ServiceName: location
         ServicePath: src/location
@@ -352,7 +352,7 @@ Resources:
   OffersService:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
       Parameters:
         ServiceName: offers
         ServicePath: src/offers
@@ -385,7 +385,7 @@ Resources:
   RecommendationsService:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
       Parameters:
         ServiceName: recommendations
         ServicePath: src/recommendations
@@ -420,7 +420,7 @@ Resources:
   VideosService:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
       Parameters:
         ServiceName: videos
         ServicePath: src/videos
@@ -455,7 +455,7 @@ Resources:
   PinpointPersonalize:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/services/pinpoint-personalize.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/services/pinpoint-personalize.yaml
       Parameters:
         ResourceBucket: !Ref ResourceBucket
         ResourceBucketRelativePath: !Ref ResourceBucketRelativePath
@@ -471,7 +471,7 @@ Resources:
   CustomResources:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/services/ProductsCustom.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/services/ProductsCustom.yaml
       Parameters:
         ProductsServiceUrl: !GetAtt ProductsService.Outputs.ServiceUrl
         LambdaVpcSecurityGroup: !Ref LambdaVpcSecurityGroup

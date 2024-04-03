@@ -538,7 +538,7 @@ Resources:
   Base:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/base/_template.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/base/_template.yaml
       Parameters:
         ResourceBucket: !Ref ResourceBucket
         ResourceBucketRelativePath: !Ref ResourceBucketRelativePath
@@ -565,7 +565,7 @@ Resources:
   Services:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/services/_template.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/services/_template.yaml
       Parameters:
         ResourceBucket: !Ref ResourceBucket
         ResourceBucketRelativePath: !Ref ResourceBucketRelativePath
@@ -608,7 +608,7 @@ Resources:
   ApiGateway:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/apigateway.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/apigateway.yaml
       Parameters:
         ProductsServiceELBListener: !GetAtt Services.Outputs.ProductsServiceELBListener
         UsersServiceELBListener: !GetAtt Services.Outputs.UsersServiceELBListener
@@ -630,7 +630,7 @@ Resources:
   WebUIPipeline:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/web-ui-pipeline.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/web-ui-pipeline.yaml
       Parameters:
         ResourceBucket: !Ref ResourceBucket
         ResourceBucketRelativePath: !Ref ResourceBucketRelativePath
@@ -690,7 +690,7 @@ Resources:
   SwaggerUIPipeline:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/swagger-ui-pipeline.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/swagger-ui-pipeline.yaml
       Parameters:
         SwaggerUICDN: !GetAtt Base.Outputs.SwaggerUICDN
         SwaggerUIBucketName: !GetAtt Base.Outputs.SwaggerUIBucketName
@@ -716,7 +716,7 @@ Resources:
   ChatbotFunctions:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/lex.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/lex.yaml
       Parameters:
         ResourceBucket: !Ref ResourceBucket
         ResourceBucketRelativePath: !Ref ResourceBucketRelativePath
@@ -730,7 +730,7 @@ Resources:
     Type: AWS::CloudFormation::Stack
     Condition: DeployLocationStack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/location.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/location.yaml
       Parameters:
         ResourceBucket: !Ref ResourceBucket
         ResourceBucketRelativePath: !Ref ResourceBucketRelativePath
@@ -756,7 +756,7 @@ Resources:
     Type: AWS::CloudFormation::Stack
     Condition: CreateAmazonPayResources
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/amazonpay.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/amazonpay.yaml
       Parameters:
         ResourceBucket: !Ref ResourceBucket
         ResourceBucketRelativePath: !Ref ResourceBucketRelativePath
@@ -769,7 +769,7 @@ Resources:
     Type: AWS::CloudFormation::Stack
     Condition: DeployAlexaEndpoint
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/alexa.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/alexa.yaml
       Parameters:
         AlexaSkillId: !Ref AlexaSkillId
         PinpointAppId: !GetAtt Base.Outputs.PinpointAppId
@@ -794,7 +794,7 @@ Resources:
   DeploymentSupport:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/deployment-support.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/deployment-support.yaml
       Parameters:
         ResourceBucket: !Ref ResourceBucket
         ResourceBucketRelativePath: !Ref ResourceBucketRelativePath
@@ -824,14 +824,14 @@ Resources:
   CleanupBucket:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/cleanup-bucket.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/cleanup-bucket.yaml
 
   # Segment Lambda Functions and Roles
   SegmentPersonalize:
     Condition: DeploySegmentResources
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/segment.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/segment.yaml
       Parameters:
         ResourceBucket: !Ref ResourceBucket
         ResourceBucketRelativePath: !Ref ResourceBucketRelativePath
@@ -844,7 +844,7 @@ Resources:
     Condition: DeploymParticleResources
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/mparticle.yaml
+      TemplateURL: !Sub https://${ResourceBucket}.s3.us-west-2.amazonaws.com//${ResourceBucketRelativePath}cloudformation-templates/mparticle.yaml
       Parameters:
         ResourceBucket: !Ref ResourceBucket
         ResourceBucketRelativePath: !Ref ResourceBucketRelativePath

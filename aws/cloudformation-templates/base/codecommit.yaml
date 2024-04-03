@@ -35,7 +35,7 @@ Resources:
       Code:
         S3:
           Bucket: !Ref ResourceBucket
-          Key: !Sub ${ResourceBucketRelativePath}source/retaildemostore-source.zip
+          Key: !Sub /${ResourceBucketRelativePath}source/retaildemostore-source.zip
 
 Outputs:
 

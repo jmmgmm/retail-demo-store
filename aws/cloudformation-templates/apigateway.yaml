@@ -58,7 +58,7 @@ Resources:
     Properties:
       Code:
         S3Bucket: !Ref ResourceBucket
-        S3Key: !Sub '${ResourceBucketRelativePath}aws-lambda/apigw-authorizer.zip'
+        S3Key: !Sub '/${ResourceBucketRelativePath}aws-lambda/apigw-authorizer.zip'
       Handler: index.handler
       Runtime: nodejs18.x
       Role: !GetAtt LambdaAuthorizerRole.Arn

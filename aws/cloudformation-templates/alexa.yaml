@@ -106,7 +106,7 @@ Resources:
     Properties:
       Code:
         S3Bucket: !Ref ResourceBucket
-        S3Key: !Sub '${ResourceBucketRelativePath}aws-lambda/alexa-skill-lambda.zip'
+        S3Key: !Sub '/${ResourceBucketRelativePath}aws-lambda/alexa-skill-lambda.zip'
       Handler: alexa-skill-lambda.lambda_handler
       Runtime: python3.12
       Role: !GetAtt AlexaSkillIAMRole.Arn

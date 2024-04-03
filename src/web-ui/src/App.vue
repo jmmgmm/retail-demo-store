@@ -60,5 +60,6 @@ export default {
 
 body {
   font-family: Ember, sans-serif;
+  background-color: black;
 }
 </style>

@@ -55,7 +55,7 @@ Resources:
         - Arn
       Code:
         S3Bucket: !Ref ResourceBucket
-        S3Key: !Sub '${ResourceBucketRelativePath}aws-lambda/mparticle-personalize.zip'
+        S3Key: !Sub '/${ResourceBucketRelativePath}aws-lambda/mparticle-personalize.zip'
       Runtime: nodejs12.x
       Timeout: 900
       FunctionName: !Sub '${Uid}-mPEventsLambda'

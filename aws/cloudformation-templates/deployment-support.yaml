@@ -150,7 +150,7 @@ Resources:
       Role: !GetAtt PersonalizePreCreateLambdaExecutionRole.Arn
       Code:
         S3Bucket: !Ref ResourceBucket
-        S3Key: !Sub '${ResourceBucketRelativePath}aws-lambda/personalize-pre-create-resources.zip'
+        S3Key: !Sub '/${ResourceBucketRelativePath}aws-lambda/personalize-pre-create-resources.zip'
       Runtime: python3.12
       Timeout: 900
       FunctionName: RetailDemoStorePersonalizePreCreateResources
@@ -301,7 +301,7 @@ Resources:
       Role: !GetAtt IVSCreateChannelsLambdaExecutionRole.Arn
       Code:
         S3Bucket: !Ref ResourceBucket
-        S3Key: !Sub '${ResourceBucketRelativePath}aws-lambda/ivs-create-channels.zip'
+        S3Key: !Sub '/${ResourceBucketRelativePath}aws-lambda/ivs-create-channels.zip'
       Runtime: python3.12
       Timeout: 900
       FunctionName: RetailDemoStoreIVSCreateChannels
@@ -388,7 +388,7 @@ Resources:
       Role: !GetAtt OpenSearchPreIndexLambdaExecutionRole.Arn
       Code:
         S3Bucket: !Ref ResourceBucket
-        S3Key: !Sub '${ResourceBucketRelativePath}aws-lambda/opensearch-pre-index.zip'
+        S3Key: !Sub '/${ResourceBucketRelativePath}aws-lambda/opensearch-pre-index.zip'
       Runtime: python3.12
       Timeout: 300
       VpcConfig:
