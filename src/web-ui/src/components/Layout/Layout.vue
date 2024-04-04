@@ -130,6 +130,6 @@ export default {
 
 <style>
 body {
-  background-color: var(--#607d8b);
+  background-color: var(--background-color);
 }
 </style>
