@@ -46,8 +46,8 @@ export default {
 
 .skip,
 .take-tour {
-  font: inherit;
-  color: white;
+  font: ffffff;
+  color: ffffff;
 }
 
 .skip {
